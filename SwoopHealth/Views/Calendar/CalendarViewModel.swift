@@ -9,6 +9,11 @@ import Foundation
 
 class CalendarViewModel: ObservableObject {
     
+    @Published var title: String = ""
+    @Published var description: String = ""
+    
+    @Published var selectedPatient: UserModel? = nil
+    
     @Published var success: Bool = false
     @Published var isLoading: Bool = false
     
@@ -37,16 +42,26 @@ class CalendarViewModel: ObservableObject {
         }
     }
     
-    func saveEvent(title: String, description: String, selectedDate: Date, selectedPatient: UserModel?) {
+    func saveEvent() {
         isLoading = true
-        guard let selectedPatient = selectedPatient else {
+        guard let patient = selectedPatient else {
+            return
+        }
+        
+        guard title.count > 0 else {
+            isLoading = false
+            return
+        }
+    
+        guard description.count > 0 else {
+            isLoading = false
             return
         }
         
         let dataInstance = DataService.shared
         
         let event = EventModel(
-            user: selectedPatient, 
+            user: patient,
             eventDate: selectedDate,
             title: title,
             description: description
@@ -76,14 +91,24 @@ class CalendarViewModel: ObservableObject {
         }
     }
     
-    // Filters out events that are not scheduled for selected date.
-    private func filterEvents(_ events: [EventModel]) -> [EventModel] {
+    func filterEvents(_ events: [EventModel]) -> [EventModel] {
         func startOfDay(for date: Date) -> Date {
             let calendar = Calendar.current
             return calendar.startOfDay(for: date)
         }
 
         let selectedDateStartOfDay = startOfDay(for: selectedDate)
-        return events.filter { startOfDay(for: $0.eventDate) == selectedDateStartOfDay }
+        
+        return events.filter {
+            startOfDay(for: $0.eventDate) == selectedDateStartOfDay
+        }
+    }
+    
+    func limitTitleText(_ text: String, limit: Int) -> String {
+        return String(text.prefix(limit))
+    }
+    
+    func limitDescriptionText(_ text: String, limit: Int) -> String {
+        return String(text.prefix(limit))
     }
 }

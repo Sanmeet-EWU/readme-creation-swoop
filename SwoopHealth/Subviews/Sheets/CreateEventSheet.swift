@@ -9,12 +9,6 @@ import SwiftUI
 import SwiftUIDatePickerDialog
 
 struct CreateEventSheet: View {
-    
-    @State var title: String = ""
-    @State var description: String = ""
-    @State var selectedDate = Date()
-    @State var selectedPatient: UserModel? = nil
-    
     @ObservedObject var viewModel: CalendarViewModel
     
     @FocusState private var focusedField: FocusableField?
@@ -25,22 +19,13 @@ struct CreateEventSheet: View {
     }
     
     private var allFieldsFilled: Bool {
-        return !title.isEmpty &&
-        !description.isEmpty &&
-        selectedPatient != nil
+        return !viewModel.title.isEmpty &&
+        !viewModel.description.isEmpty &&
+        viewModel.selectedPatient != nil
     }
     
     var body: some View {
         content
-    }
-    
-    func saveEvent() {
-        viewModel.saveEvent(
-            title: title,
-            description: description,
-            selectedDate: selectedDate,
-            selectedPatient: selectedPatient
-        )
     }
 }
 
@@ -81,7 +66,7 @@ extension CreateEventSheet {
     
     private var button: some View {
         Button {
-            saveEvent()
+            viewModel.saveEvent()
         } label: {
             HStack {
                 Spacer()
@@ -109,7 +94,7 @@ extension CreateEventSheet {
     
     private var picker: some View {
         VStack {
-            DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+            DatePicker("Select Date", selection: $viewModel.selectedDate, displayedComponents: [.date])
                 .datePickerStyle(.compact)
                 .font(.system(size: 16, weight: .medium))
             
@@ -117,7 +102,7 @@ extension CreateEventSheet {
                 .frame(height: 1)
                 .foregroundStyle(Color(.systemGray5))
             
-            DatePicker("Select Time", selection: $selectedDate, displayedComponents: [.hourAndMinute])
+            DatePicker("Select Time", selection: $viewModel.selectedDate, displayedComponents: [.hourAndMinute])
                 .datePickerStyle(.compact)
                 .font(.system(size: 16, weight: .medium))
         }
@@ -132,7 +117,7 @@ extension CreateEventSheet {
     
     private var details: some View {
         VStack(spacing: 12) {
-            TextField("Title", text: $title)
+            TextField("Title", text: $viewModel.title)
                 .padding(12)
                 .padding(.horizontal, 2)
                 .background {
@@ -141,8 +126,11 @@ extension CreateEventSheet {
                         .foregroundStyle(Color(.systemGray5))
                         .frame(height: 46)
                 }
+                .onChange(of: viewModel.title) { (oldValue, newValue) in
+                    viewModel.title = viewModel.limitTitleText(newValue, limit: 50)
+                }
             
-            TextEditor(text: $description)
+            TextEditor(text: $viewModel.description)
                 .padding(10)
                 .padding(.horizontal, 2)
                 .frame(height: UIScreen.main.bounds.height / 5)
@@ -152,7 +140,7 @@ extension CreateEventSheet {
                         RoundedRectangle(cornerRadius: 25)
                             .stroke(lineWidth: 1)
                             .foregroundStyle(Color(.systemGray5))
-                        if (description.isEmpty) {
+                        if (viewModel.description.isEmpty) {
                             Text("Description")
                                 .padding(16)
                                 .foregroundStyle(Color(.systemGray3))
@@ -162,7 +150,9 @@ extension CreateEventSheet {
                 .onTapGesture {
                     focusedField = .description
                 }
-            
+                .onChange(of: viewModel.description) { (oldValue, newValue) in
+                    viewModel.description = viewModel.limitDescriptionText(newValue, limit: 200)
+                }
         }
         .padding(12)
         .autocorrectionDisabled()
@@ -176,16 +166,16 @@ extension CreateEventSheet {
                     ForEach(0..<viewModel.patients.count / 2, id: \.self) { index in
                         let patient = viewModel.patients[index]
                         Button {
-                            selectedPatient = patient
+                            viewModel.selectedPatient = patient
                         } label: {
                             Text(patient.name)
                                 .font(.system(size: 16))
                                 .padding(12)
                                 .padding(.horizontal, 6)
-                                .foregroundStyle(selectedPatient?.id == patient.id ? .white : Color(.label))
+                                .foregroundStyle(viewModel.selectedPatient?.id == patient.id ? .white : Color(.label))
                                 .background {
                                     Capsule()
-                                        .foregroundStyle(selectedPatient?.id == patient.id ? Color.blue : Color(.systemGray5))
+                                        .foregroundStyle(viewModel.selectedPatient?.id == patient.id ? Color.blue : Color(.systemGray5))
                                 }
                         }
                         .buttonStyle(ButtonScaleEffectStyle())
@@ -197,16 +187,16 @@ extension CreateEventSheet {
                     ForEach(viewModel.patients.count / 2..<viewModel.patients.count, id: \.self) { index in
                         let patient = viewModel.patients[index]
                         Button {
-                            selectedPatient = patient
+                            viewModel.selectedPatient = patient
                         } label: {
                             Text(patient.name)
                                 .font(.system(size: 16))
                                 .padding(12)
                                 .padding(.horizontal, 6)
-                                .foregroundStyle(selectedPatient?.id == patient.id ? .white : Color(.label))
+                                .foregroundStyle(viewModel.selectedPatient?.id == patient.id ? .white : Color(.label))
                                 .background {
                                     Capsule()
-                                        .foregroundStyle(selectedPatient?.id == patient.id ? Color.blue : Color(.systemGray5))
+                                        .foregroundStyle(viewModel.selectedPatient?.id == patient.id ? Color.blue : Color(.systemGray5))
                                 }
                         }
                         .buttonStyle(ButtonScaleEffectStyle())

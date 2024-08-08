@@ -38,6 +38,9 @@
 		576E09F82C446964005463DF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576E09F72C446964005463DF /* Launch Screen.storyboard */; };
 		57716C4E2C632C430086CC79 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C4D2C632C430086CC79 /* Event.swift */; };
 		57716C512C632C7F0086CC79 /* EventSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C502C632C7F0086CC79 /* EventSheet.swift */; };
+		57716C6A2C648BED0086CC79 /* PatientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C692C648BED0086CC79 /* PatientItem.swift */; };
+		57716C7B2C656CA20086CC79 /* PatientsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */; };
+		57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */; };
 		57A232D92C471FFD00776D46 /* PatientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A232D82C471FFD00776D46 /* PatientsView.swift */; };
 		57A4C7A42C4328C500843905 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4C7A32C4328C500843905 /* Color.swift */; };
 		57A4C7A82C43299E00843905 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4C7A72C43299E00843905 /* ButtonStyles.swift */; };
@@ -49,6 +52,16 @@
 		57F04BC62C3F7266004C44CA /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BC52C3F7266004C44CA /* TextFieldStyles.swift */; };
 		57F04BCB2C3F72E2004C44CA /* BackgroundStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BCA2C3F72E2004C44CA /* BackgroundStyles.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57716C742C6569B70086CC79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57F04BA82C3F5ABB004C44CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57F04BAF2C3F5ABB004C44CA;
+			remoteInfo = SwoopHealth;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5701D3B62C4DFB7A00168255 /* ProfileSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummaryView.swift; sourceTree = "<group>"; };
@@ -78,6 +91,10 @@
 		576E09F72C446964005463DF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		57716C4D2C632C430086CC79 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		57716C502C632C7F0086CC79 /* EventSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSheet.swift; sourceTree = "<group>"; };
+		57716C692C648BED0086CC79 /* PatientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientItem.swift; sourceTree = "<group>"; };
+		57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwoopHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModelTest.swift; sourceTree = "<group>"; };
+		57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
 		57A232D82C471FFD00776D46 /* PatientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsView.swift; sourceTree = "<group>"; };
 		57A4C7A32C4328C500843905 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		57A4C7A72C43299E00843905 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -92,6 +109,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		57716C6D2C6569B70086CC79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57F04BAD2C3F5ABB004C44CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +286,23 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		57716C682C648BE60086CC79 /* Patients */ = {
+			isa = PBXGroup;
+			children = (
+				57716C692C648BED0086CC79 /* PatientItem.swift */,
+			);
+			path = Patients;
+			sourceTree = "<group>";
+		};
+		57716C712C6569B70086CC79 /* SwoopHealthTests */ = {
+			isa = PBXGroup;
+			children = (
+				57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */,
+				57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */,
+			);
+			path = SwoopHealthTests;
+			sourceTree = "<group>";
+		};
 		57A4C7A52C4328D700843905 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +338,7 @@
 		57A4C7AA2C43315400843905 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				57716C682C648BE60086CC79 /* Patients */,
 				57716C4F2C632C710086CC79 /* Event */,
 				573AB4072C60A229005A4862 /* Messages */,
 				572C87372C4336B20033D3C7 /* Menu */,
@@ -309,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				57F04BB22C3F5ABB004C44CA /* SwoopHealth */,
+				57716C712C6569B70086CC79 /* SwoopHealthTests */,
 				57F04BB12C3F5ABB004C44CA /* Products */,
 				570AB6252C45A8A90026C6C6 /* Frameworks */,
 			);
@@ -318,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				57F04BB02C3F5ABB004C44CA /* SwoopHealth.app */,
+				57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +405,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		57716C6F2C6569B70086CC79 /* SwoopHealthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57716C762C6569B70086CC79 /* Build configuration list for PBXNativeTarget "SwoopHealthTests" */;
+			buildPhases = (
+				57716C6C2C6569B70086CC79 /* Sources */,
+				57716C6D2C6569B70086CC79 /* Frameworks */,
+				57716C6E2C6569B70086CC79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57716C752C6569B70086CC79 /* PBXTargetDependency */,
+			);
+			name = SwoopHealthTests;
+			productName = SwoopHealthTests;
+			productReference = 57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		57F04BAF2C3F5ABB004C44CA /* SwoopHealth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57F04BBE2C3F5ABD004C44CA /* Build configuration list for PBXNativeTarget "SwoopHealth" */;
@@ -394,6 +456,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					57716C6F2C6569B70086CC79 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 57F04BAF2C3F5ABB004C44CA;
+					};
 					57F04BAF2C3F5ABB004C44CA = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -418,11 +484,19 @@
 			projectRoot = "";
 			targets = (
 				57F04BAF2C3F5ABB004C44CA /* SwoopHealth */,
+				57716C6F2C6569B70086CC79 /* SwoopHealthTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		57716C6E2C6569B70086CC79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57F04BAE2C3F5ABB004C44CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,12 +511,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		57716C6C2C6569B70086CC79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */,
+				57716C7B2C656CA20086CC79 /* PatientsViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57F04BAC2C3F5ABB004C44CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				57F04BB62C3F5ABB004C44CA /* OpeningView.swift in Sources */,
 				573AB3F72C5F41A6005A4862 /* DataService.swift in Sources */,
+				57716C6A2C648BED0086CC79 /* PatientItem.swift in Sources */,
 				57A232D92C471FFD00776D46 /* PatientsView.swift in Sources */,
 				573AB3FB2C5F443B005A4862 /* PatientModel.swift in Sources */,
 				570AB6352C46FFEB0026C6C6 /* UI.swift in Sources */,
@@ -479,7 +563,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		57716C752C6569B70086CC79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57F04BAF2C3F5ABB004C44CA /* SwoopHealth */;
+			targetProxy = 57716C742C6569B70086CC79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		57716C772C6569B70086CC79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXVA5WXT99;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoblucas.SwoopHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwoopHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwoopHealth";
+			};
+			name = Debug;
+		};
+		57716C782C6569B70086CC79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXVA5WXT99;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoblucas.SwoopHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwoopHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwoopHealth";
+			};
+			name = Release;
+		};
 		57F04BBC2C3F5ABD004C44CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -672,6 +800,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		57716C762C6569B70086CC79 /* Build configuration list for PBXNativeTarget "SwoopHealthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57716C772C6569B70086CC79 /* Debug */,
+				57716C782C6569B70086CC79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		57F04BAB2C3F5ABB004C44CA /* Build configuration list for PBXProject "SwoopHealth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

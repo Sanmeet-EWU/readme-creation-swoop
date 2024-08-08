@@ -142,9 +142,7 @@ class AuthService {
         }
     }
 
-    func getUserInfo(
-        forUserID userID: String,
-        completion: @escaping (_ name: String?, _ email: String?, _ userType: UserTypeEnum?, _ dob: String?, _ phone: String?, _ doctor: String?) -> ()
+    func getUserInfo(forUserID userID: String, completion: @escaping (_ name: String?, _ email: String?, _ userType: UserTypeEnum?, _ dob: String?, _ phone: String?, _ doctor: String?) -> ()
     ) {
         REF_USERS.document(userID).getDocument { (documentSnapshot, error) in
             if let document = documentSnapshot,
@@ -167,7 +165,6 @@ class AuthService {
         }
     }
 
-    
     //MARK: SIGN OUT USER
     func signOut() async throws {
         do {

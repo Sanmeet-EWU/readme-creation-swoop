@@ -8,38 +8,11 @@
 import SwiftUI
 
 struct PatientsView: View {
-
+    
     @State var search: String = ""
     
     @StateObject var viewModel = PatientsViewModel()
     @AppStorage("user_type") var currentUserType: String?
-    
-    var filteredPatients: [UserModel] {
-        if search.isEmpty {
-            return viewModel.patients.filter {
-                if let type = currentUserType, type == "patient" {
-                    return $0.type.rawValue == "doctor" ||
-                           $0.type.rawValue == "nurse" ||
-                           $0.type.rawValue == "admin"
-                } else {
-                    return true
-                }
-            }
-        } else {
-            return viewModel.patients.filter {
-                if let type = currentUserType, type == "patient" {
-                    return ($0.type.rawValue == "doctor" ||
-                            $0.type.rawValue == "nurse" ||
-                            $0.type.rawValue == "admin") &&
-                           ($0.name.lowercased().contains(search.lowercased()) ||
-                            $0.email.lowercased().contains(search.lowercased()))
-                } else {
-                    return $0.name.lowercased().contains(search.lowercased()) ||
-                           $0.email.lowercased().contains(search.lowercased())
-                }
-            }
-        }
-    }
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -79,17 +52,45 @@ struct PatientsView: View {
                         }
                 }
                 
+                if viewModel.favoriteFilteredPatients.count > 0 {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Bookmarked")
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color(.systemGray3))
+                        ForEach(0..<viewModel.favoriteFilteredPatients.count, id: \.self) { index in
+                            let patient = viewModel.favoriteFilteredPatients[index]
+                            NavigationLink {
+                                MessageView(
+                                    user: patient,
+                                    secondUserID: patient.id
+                                )
+                            } label: {
+                                PatientItem(
+                                    patient: patient,
+                                    viewModel: viewModel
+                                )
+                            }
+                            .buttonStyle(ButtonScaleEffectStyle())
+                        }
+                    }
+                    .padding(.bottom, 12)
+                }
                 
                 VStack(spacing: 0) {
-                    ForEach(0..<filteredPatients.count, id: \.self) { index in
-                        let patient = filteredPatients[index]
+                    ForEach(0..<viewModel.filteredPatients.count, id: \.self) { index in
+                        let patient = viewModel.filteredPatients[index]
                         NavigationLink {
                             MessageView(
                                 user: patient,
                                 secondUserID: patient.id
                             )
                         } label: {
-                            PatientItem(patient: patient)
+                            if (!viewModel.favoritePatients.contains(patient.id)) {
+                                PatientItem(
+                                    patient: patient,
+                                    viewModel: viewModel
+                                )
+                            }
                         }
                         .buttonStyle(ButtonScaleEffectStyle())
                     }
@@ -104,38 +105,4 @@ struct PatientsView: View {
 
 #Preview {
     PatientsView()
-}
-
-struct PatientItem: View {
-    let patient: UserModel
-    var body: some View {
-        HStack(spacing: 12) {
-            Circle()
-                .frame(width: 48, height: 48)
-                .foregroundStyle(Color.theme.blue)
-                .overlay {
-                    Text(String(patient.name.first!))
-                        .foregroundStyle(.white)
-                        .font(.system(size: 22, weight: .medium))
-                }
-            VStack(alignment: .leading, spacing: 4) {
-                Text(patient.name)
-                    .font(.system(size: 15, weight: .medium))
-                    .foregroundStyle(Color(.label))
-                Text(patient.email)
-                    .font(.system(size: 14))
-                    .foregroundStyle(Color(.systemGray))
-            }
-            Spacer()
-            Image(systemName: "chevron.right")
-                .font(.system(size: 13, weight: .medium))
-        }
-        .padding(14)
-        .background {
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(Color.theme.blue)
-                .opacity(0.05)
-        }
-        .padding(.top, 8)
-    }
 }
