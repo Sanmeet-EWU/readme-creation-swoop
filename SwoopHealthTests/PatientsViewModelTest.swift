@@ -37,12 +37,29 @@ final class PatientsViewModelTest: XCTestCase {
         let filtered = viewModel.filteredPatients
         
         XCTAssertEqual(filtered.count, 3, "Filtered patients should exclude other patients when currentUserType is 'patient'.")
-        XCTAssertTrue(filtered.allSatisfy { $0.type != .patient }, "Filtered patients should not include patients.")
+        XCTAssertTrue(filtered.allSatisfy { $0.type != .patient }, "Filtered patients should not include non-patient users.")
     }
     
-    func testFilteredPatientsWithSearch() throws {}
+    func testFilteredPatientsWithSearch() throws {
+        // Katrina discord message 8/9/24
+        viewModel.currentUserType = "patient"
+        viewModel.patients = patients
+        viewModel.search = "Alice"
+
+        let filtered = viewModel.filteredPatients
+
+        XCTAssertEqual(filtered.count, 0, "Filtered patients with search test returned a user that doesn't match the specified filter")   
+    }
     
-    func testSortedPatientsByName() throws {}
+    func testSortedPatientsByName() throws {
+        viewModel.currentUserType = "patient"
+        viewModel.patients = patients
+        viewModel.order(by: "name", descending: true)
+
+        let sorted = viewModel.sortedPatients
+
+        XCTAssert
+    }
     
     func testSortedPatientsByType() throws {}
     
