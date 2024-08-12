@@ -86,10 +86,10 @@ final class PatientsViewModelTest: XCTestCase {
     func testFavoriteFilteredPatients() throws {
         viewModel.currentUserType = "patient"
         viewModel.patients = patients
-        viewModel.filter { $0. isFavorite }
+        viewModel.filter { $0. isFavorite } // check syntax for isFavorite
 
         let favPatients = viewModel.filteredPatients
-
+        // check boolean statement syntax
         XCTAssertTrue(favPatients.allSatisfy {$0 isFavorite == true}, "Filtered favorite patients test should return favorite patients only." )
     }
 }
