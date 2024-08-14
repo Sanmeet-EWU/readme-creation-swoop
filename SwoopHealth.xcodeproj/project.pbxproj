@@ -42,7 +42,7 @@
 		57716C4E2C632C430086CC79 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C4D2C632C430086CC79 /* Event.swift */; };
 		57716C512C632C7F0086CC79 /* EventSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C502C632C7F0086CC79 /* EventSheet.swift */; };
 		57716C6A2C648BED0086CC79 /* PatientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C692C648BED0086CC79 /* PatientItem.swift */; };
-		57716C7B2C656CA20086CC79 /* PatientsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */; };
+		57716C7B2C656CA20086CC79 /* PatientsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7A2C656CA20086CC79 /* PatientsViewModelTests.swift */; };
 		57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */; };
 		578787F02C6C235500794106 /* DoctorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787EF2C6C235500794106 /* DoctorListItem.swift */; };
 		578787F32C6C23DD00794106 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F22C6C23DD00794106 /* ListItem.swift */; };
@@ -103,7 +103,7 @@
 		57716C502C632C7F0086CC79 /* EventSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSheet.swift; sourceTree = "<group>"; };
 		57716C692C648BED0086CC79 /* PatientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientItem.swift; sourceTree = "<group>"; };
 		57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwoopHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModelTest.swift; sourceTree = "<group>"; };
+		57716C7A2C656CA20086CC79 /* PatientsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModelTests.swift; sourceTree = "<group>"; };
 		57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
 		578787EF2C6C235500794106 /* DoctorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListItem.swift; sourceTree = "<group>"; };
 		578787F22C6C23DD00794106 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 		57716C712C6569B70086CC79 /* SwoopHealthTests */ = {
 			isa = PBXGroup;
 			children = (
-				57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */,
+				57716C7A2C656CA20086CC79 /* PatientsViewModelTests.swift */,
 				57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */,
 			);
 			path = SwoopHealthTests;
@@ -569,7 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */,
-				57716C7B2C656CA20086CC79 /* PatientsViewModelTest.swift in Sources */,
+				57716C7B2C656CA20086CC79 /* PatientsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

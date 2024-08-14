@@ -9,8 +9,6 @@ import SwiftUI
 
 struct PatientsView: View {
     
-    @State var search: String = ""
-    
     @StateObject var viewModel = PatientsViewModel()
     @AppStorage("user_type") var currentUserType: String?
     
@@ -25,7 +23,7 @@ struct PatientsView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundStyle(Color.theme.blue)
                             .fontWeight(.medium)
-                        TextField("Search by name or email", text: $search)
+                        TextField("Search by name or email", text: $viewModel.search)
                     }
                     .padding(.horizontal)
                     .background {

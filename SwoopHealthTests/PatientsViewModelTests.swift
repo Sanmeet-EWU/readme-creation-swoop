@@ -1,5 +1,5 @@
 //
-//  PatientsViewModelTest.swift
+//  PatientsViewModelTests.swift
 //  SwoopHealthTests
 //
 //  Created by Jacob Lucas on 8/8/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import SwoopHealth
 
-final class PatientsViewModelTest: XCTestCase {
+final class PatientsViewModelTests: XCTestCase {
     
     var viewModel: PatientsViewModel!
     
