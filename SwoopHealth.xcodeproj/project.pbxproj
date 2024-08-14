@@ -1,0 +1,945 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5701D3B72C4DFB7A00168255 /* ProfileSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701D3B62C4DFB7A00168255 /* ProfileSummaryView.swift */; };
+		5701D3BC2C4E034C00168255 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701D3BB2C4E034C00168255 /* MessageView.swift */; };
+		570AB6232C45A5150026C6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 570AB6222C45A5150026C6C6 /* GoogleService-Info.plist */; };
+		570AB6292C45A8AF0026C6C6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 570AB6282C45A8AF0026C6C6 /* FirebaseAuth */; };
+		570AB62B2C45A8B60026C6C6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 570AB62A2C45A8B60026C6C6 /* FirebaseFirestoreSwift */; };
+		570AB62F2C45A9500026C6C6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB62E2C45A9500026C6C6 /* AuthService.swift */; };
+		570AB6322C45AAA70026C6C6 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB6312C45AAA70026C6C6 /* AuthDataResultModel.swift */; };
+		570AB6352C46FFEB0026C6C6 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB6342C46FFEB0026C6C6 /* UI.swift */; };
+		572C87332C4331D00033D3C7 /* SignInSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87322C4331D00033D3C7 /* SignInSheet.swift */; };
+		572C87352C4335070033D3C7 /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87342C4335070033D3C7 /* InfoSheet.swift */; };
+		572C87392C4336B80033D3C7 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87382C4336B80033D3C7 /* Menu.swift */; };
+		572C873B2C43380A0033D3C7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C873A2C43380A0033D3C7 /* MainView.swift */; };
+		5734BB852C6A8494009109E7 /* DoctorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BB842C6A8494009109E7 /* DoctorListView.swift */; };
+		5734BB882C6A84D9009109E7 /* DoctorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BB872C6A84D9009109E7 /* DoctorListViewModel.swift */; };
+		5734BB8A2C6A891B009109E7 /* DoctorDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BB892C6A891B009109E7 /* DoctorDetailsView.swift */; };
+		573AB3F52C5F4167005A4862 /* PatientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3F42C5F4167005A4862 /* PatientsViewModel.swift */; };
+		573AB3F72C5F41A6005A4862 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3F62C5F41A6005A4862 /* DataService.swift */; };
+		573AB3F92C5F422B005A4862 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3F82C5F422B005A4862 /* UserModel.swift */; };
+		573AB3FB2C5F443B005A4862 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3FA2C5F443B005A4862 /* PatientModel.swift */; };
+		573AB3FD2C5F5EC9005A4862 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3FC2C5F5EC9005A4862 /* MessageViewModel.swift */; };
+		573AB3FF2C601F19005A4862 /* CreateEventSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3FE2C601F19005A4862 /* CreateEventSheet.swift */; };
+		573AB4022C602398005A4862 /* SwiftUIDatePickerDialog in Frameworks */ = {isa = PBXBuildFile; productRef = 573AB4012C602398005A4862 /* SwiftUIDatePickerDialog */; };
+		573AB4042C60648C005A4862 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB4032C60648C005A4862 /* CalendarViewModel.swift */; };
+		573AB4062C6066D8005A4862 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB4052C6066D8005A4862 /* EventModel.swift */; };
+		57540C1A2C60C41D001F9139 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 57540C192C60C41D001F9139 /* Lottie */; };
+		57638F562C509E7900F00AB0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57638F552C509E7900F00AB0 /* Message.swift */; };
+		57638F582C509E9200F00AB0 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57638F572C509E9200F00AB0 /* MessageModel.swift */; };
+		57638F5B2C50A3F700F00AB0 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57638F5A2C50A3F700F00AB0 /* CreateAccountView.swift */; };
+		57638F5D2C50A93200F00AB0 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57638F5C2C50A93200F00AB0 /* CreateAccountViewModel.swift */; };
+		576E09F42C43799D005463DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E09F32C43799D005463DF /* HomeView.swift */; };
+		576E09F62C446521005463DF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576E09F52C446521005463DF /* CalendarView.swift */; };
+		576E09F82C446964005463DF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576E09F72C446964005463DF /* Launch Screen.storyboard */; };
+		57716C4E2C632C430086CC79 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C4D2C632C430086CC79 /* Event.swift */; };
+		57716C512C632C7F0086CC79 /* EventSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C502C632C7F0086CC79 /* EventSheet.swift */; };
+		57716C6A2C648BED0086CC79 /* PatientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C692C648BED0086CC79 /* PatientItem.swift */; };
+		57716C7B2C656CA20086CC79 /* PatientsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7A2C656CA20086CC79 /* PatientsViewModelTests.swift */; };
+		57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */; };
+		578787F02C6C235500794106 /* DoctorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787EF2C6C235500794106 /* DoctorListItem.swift */; };
+		578787F32C6C23DD00794106 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F22C6C23DD00794106 /* ListItem.swift */; };
+		578787F52C6C23F400794106 /* InfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F42C6C23F400794106 /* InfoItem.swift */; };
+		578787F82C6C2C4200794106 /* DoctorDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F72C6C2C4200794106 /* DoctorDetailsViewModel.swift */; };
+		57A232D92C471FFD00776D46 /* PatientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A232D82C471FFD00776D46 /* PatientsView.swift */; };
+		57A4C7A42C4328C500843905 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4C7A32C4328C500843905 /* Color.swift */; };
+		57A4C7A82C43299E00843905 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4C7A72C43299E00843905 /* ButtonStyles.swift */; };
+		57F04BB42C3F5ABB004C44CA /* SwoopHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BB32C3F5ABB004C44CA /* SwoopHealthApp.swift */; };
+		57F04BB62C3F5ABB004C44CA /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BB52C3F5ABB004C44CA /* OpeningView.swift */; };
+		57F04BB82C3F5ABD004C44CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F04BB72C3F5ABD004C44CA /* Assets.xcassets */; };
+		57F04BBB2C3F5ABD004C44CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F04BBA2C3F5ABD004C44CA /* Preview Assets.xcassets */; };
+		57F04BC22C3F71CB004C44CA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BC12C3F71CB004C44CA /* ProfileView.swift */; };
+		57F04BC62C3F7266004C44CA /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BC52C3F7266004C44CA /* TextFieldStyles.swift */; };
+		57F04BCB2C3F72E2004C44CA /* BackgroundStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F04BCA2C3F72E2004C44CA /* BackgroundStyles.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57716C742C6569B70086CC79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57F04BA82C3F5ABB004C44CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57F04BAF2C3F5ABB004C44CA;
+			remoteInfo = SwoopHealth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5701D3B62C4DFB7A00168255 /* ProfileSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummaryView.swift; sourceTree = "<group>"; };
+		5701D3BB2C4E034C00168255 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		570AB6222C45A5150026C6C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		570AB62E2C45A9500026C6C6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		570AB6312C45AAA70026C6C6 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
+		570AB6342C46FFEB0026C6C6 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		572C87322C4331D00033D3C7 /* SignInSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSheet.swift; sourceTree = "<group>"; };
+		572C87342C4335070033D3C7 /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
+		572C87382C4336B80033D3C7 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		572C873A2C43380A0033D3C7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5734BB842C6A8494009109E7 /* DoctorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListView.swift; sourceTree = "<group>"; };
+		5734BB872C6A84D9009109E7 /* DoctorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewModel.swift; sourceTree = "<group>"; };
+		5734BB892C6A891B009109E7 /* DoctorDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailsView.swift; sourceTree = "<group>"; };
+		573AB3F42C5F4167005A4862 /* PatientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModel.swift; sourceTree = "<group>"; };
+		573AB3F62C5F41A6005A4862 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		573AB3F82C5F422B005A4862 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		573AB3FA2C5F443B005A4862 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
+		573AB3FC2C5F5EC9005A4862 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		573AB3FE2C601F19005A4862 /* CreateEventSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventSheet.swift; sourceTree = "<group>"; };
+		573AB4032C60648C005A4862 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		573AB4052C6066D8005A4862 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		57638F552C509E7900F00AB0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		57638F572C509E9200F00AB0 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		57638F5A2C50A3F700F00AB0 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		57638F5C2C50A93200F00AB0 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		576E09F32C43799D005463DF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		576E09F52C446521005463DF /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		576E09F72C446964005463DF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		57716C4D2C632C430086CC79 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		57716C502C632C7F0086CC79 /* EventSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSheet.swift; sourceTree = "<group>"; };
+		57716C692C648BED0086CC79 /* PatientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientItem.swift; sourceTree = "<group>"; };
+		57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwoopHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57716C7A2C656CA20086CC79 /* PatientsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModelTests.swift; sourceTree = "<group>"; };
+		57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
+		578787EF2C6C235500794106 /* DoctorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListItem.swift; sourceTree = "<group>"; };
+		578787F22C6C23DD00794106 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		578787F42C6C23F400794106 /* InfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItem.swift; sourceTree = "<group>"; };
+		578787F72C6C2C4200794106 /* DoctorDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailsViewModel.swift; sourceTree = "<group>"; };
+		57A232D82C471FFD00776D46 /* PatientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsView.swift; sourceTree = "<group>"; };
+		57A4C7A32C4328C500843905 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		57A4C7A72C43299E00843905 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		57F04BB02C3F5ABB004C44CA /* SwoopHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwoopHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57F04BB32C3F5ABB004C44CA /* SwoopHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwoopHealthApp.swift; sourceTree = "<group>"; };
+		57F04BB52C3F5ABB004C44CA /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		57F04BB72C3F5ABD004C44CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57F04BBA2C3F5ABD004C44CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57F04BC12C3F71CB004C44CA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		57F04BC52C3F7266004C44CA /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
+		57F04BCA2C3F72E2004C44CA /* BackgroundStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStyles.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57716C6D2C6569B70086CC79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57F04BAD2C3F5ABB004C44CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				573AB4022C602398005A4862 /* SwiftUIDatePickerDialog in Frameworks */,
+				570AB6292C45A8AF0026C6C6 /* FirebaseAuth in Frameworks */,
+				570AB62B2C45A8B60026C6C6 /* FirebaseFirestoreSwift in Frameworks */,
+				57540C1A2C60C41D001F9139 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5701D3B52C4DFB6600168255 /* ProfileSummary */ = {
+			isa = PBXGroup;
+			children = (
+				5701D3B62C4DFB7A00168255 /* ProfileSummaryView.swift */,
+			);
+			path = ProfileSummary;
+			sourceTree = "<group>";
+		};
+		5701D3BA2C4E034400168255 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				5701D3BB2C4E034C00168255 /* MessageView.swift */,
+				573AB3FC2C5F5EC9005A4862 /* MessageViewModel.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		570AB6252C45A8A90026C6C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		570AB62C2C45A93D0026C6C6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				570AB62D2C45A9450026C6C6 /* Firebase */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		570AB62D2C45A9450026C6C6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				570AB62E2C45A9500026C6C6 /* AuthService.swift */,
+				573AB3F62C5F41A6005A4862 /* DataService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		570AB6302C45AA8B0026C6C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				570AB6312C45AAA70026C6C6 /* AuthDataResultModel.swift */,
+				57638F572C509E9200F00AB0 /* MessageModel.swift */,
+				573AB3F82C5F422B005A4862 /* UserModel.swift */,
+				573AB3FA2C5F443B005A4862 /* PatientModel.swift */,
+				573AB4052C6066D8005A4862 /* EventModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		570AB6332C46FFE60026C6C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				570AB6342C46FFEB0026C6C6 /* UI.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		572C87362C4336A90033D3C7 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				572C87342C4335070033D3C7 /* InfoSheet.swift */,
+				572C87322C4331D00033D3C7 /* SignInSheet.swift */,
+				573AB3FE2C601F19005A4862 /* CreateEventSheet.swift */,
+				57716C502C632C7F0086CC79 /* EventSheet.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		572C87372C4336B20033D3C7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				572C87382C4336B80033D3C7 /* Menu.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		572C873C2C43392F0033D3C7 /* Opening */ = {
+			isa = PBXGroup;
+			children = (
+				57F04BB52C3F5ABB004C44CA /* OpeningView.swift */,
+			);
+			path = Opening;
+			sourceTree = "<group>";
+		};
+		572C873D2C4339330033D3C7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57F04BC12C3F71CB004C44CA /* ProfileView.swift */,
+				5701D3B52C4DFB6600168255 /* ProfileSummary */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		572C873E2C4339380033D3C7 /* Patients */ = {
+			isa = PBXGroup;
+			children = (
+				57A232D82C471FFD00776D46 /* PatientsView.swift */,
+				573AB3F42C5F4167005A4862 /* PatientsViewModel.swift */,
+			);
+			path = Patients;
+			sourceTree = "<group>";
+		};
+		572C873F2C43393E0033D3C7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				576E09F32C43799D005463DF /* HomeView.swift */,
+				5734BB862C6A84BA009109E7 /* DoctorList */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		572C87402C4339470033D3C7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				576E09F52C446521005463DF /* CalendarView.swift */,
+				573AB4032C60648C005A4862 /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		572C87412C4339540033D3C7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				572C873A2C43380A0033D3C7 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5734BB862C6A84BA009109E7 /* DoctorList */ = {
+			isa = PBXGroup;
+			children = (
+				5734BB842C6A8494009109E7 /* DoctorListView.swift */,
+				5734BB872C6A84D9009109E7 /* DoctorListViewModel.swift */,
+				578787F62C6C2C2D00794106 /* DoctorDetails */,
+			);
+			path = DoctorList;
+			sourceTree = "<group>";
+		};
+		573AB4072C60A229005A4862 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				57638F552C509E7900F00AB0 /* Message.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		57638F592C50A3E800F00AB0 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				57638F5A2C50A3F700F00AB0 /* CreateAccountView.swift */,
+				57638F5C2C50A93200F00AB0 /* CreateAccountViewModel.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		57716C4F2C632C710086CC79 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				57716C4D2C632C430086CC79 /* Event.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		57716C682C648BE60086CC79 /* Patients */ = {
+			isa = PBXGroup;
+			children = (
+				57716C692C648BED0086CC79 /* PatientItem.swift */,
+			);
+			path = Patients;
+			sourceTree = "<group>";
+		};
+		57716C712C6569B70086CC79 /* SwoopHealthTests */ = {
+			isa = PBXGroup;
+			children = (
+				57716C7A2C656CA20086CC79 /* PatientsViewModelTests.swift */,
+				57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */,
+			);
+			path = SwoopHealthTests;
+			sourceTree = "<group>";
+		};
+		578787EE2C6C234A00794106 /* Doctors */ = {
+			isa = PBXGroup;
+			children = (
+				578787EF2C6C235500794106 /* DoctorListItem.swift */,
+			);
+			path = Doctors;
+			sourceTree = "<group>";
+		};
+		578787F12C6C23D200794106 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				578787F22C6C23DD00794106 /* ListItem.swift */,
+				578787F42C6C23F400794106 /* InfoItem.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		578787F62C6C2C2D00794106 /* DoctorDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5734BB892C6A891B009109E7 /* DoctorDetailsView.swift */,
+				578787F72C6C2C4200794106 /* DoctorDetailsViewModel.swift */,
+			);
+			path = DoctorDetails;
+			sourceTree = "<group>";
+		};
+		57A4C7A52C4328D700843905 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				57A4C7A32C4328C500843905 /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		57A4C7A62C4328DD00843905 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				570AB6332C46FFE60026C6C6 /* UI */,
+				57A4C7A52C4328D700843905 /* Color */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		57A4C7A92C43314600843905 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57638F592C50A3E800F00AB0 /* Admin */,
+				5701D3BA2C4E034400168255 /* Messages */,
+				572C873C2C43392F0033D3C7 /* Opening */,
+				572C87412C4339540033D3C7 /* Main */,
+				572C87402C4339470033D3C7 /* Calendar */,
+				572C873F2C43393E0033D3C7 /* Home */,
+				572C873E2C4339380033D3C7 /* Patients */,
+				572C873D2C4339330033D3C7 /* Profile */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A4C7AA2C43315400843905 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				578787F12C6C23D200794106 /* Profile */,
+				578787EE2C6C234A00794106 /* Doctors */,
+				57716C682C648BE60086CC79 /* Patients */,
+				57716C4F2C632C710086CC79 /* Event */,
+				573AB4072C60A229005A4862 /* Messages */,
+				572C87372C4336B20033D3C7 /* Menu */,
+				572C87362C4336A90033D3C7 /* Sheets */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		57F04BA72C3F5ABB004C44CA = {
+			isa = PBXGroup;
+			children = (
+				57F04BB22C3F5ABB004C44CA /* SwoopHealth */,
+				57716C712C6569B70086CC79 /* SwoopHealthTests */,
+				57F04BB12C3F5ABB004C44CA /* Products */,
+				570AB6252C45A8A90026C6C6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		57F04BB12C3F5ABB004C44CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57F04BB02C3F5ABB004C44CA /* SwoopHealth.app */,
+				57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57F04BB22C3F5ABB004C44CA /* SwoopHealth */ = {
+			isa = PBXGroup;
+			children = (
+				570AB6302C45AA8B0026C6C6 /* Models */,
+				570AB62C2C45A93D0026C6C6 /* Services */,
+				57A4C7A92C43314600843905 /* Views */,
+				57A4C7AA2C43315400843905 /* Subviews */,
+				57F04BC72C3F72BD004C44CA /* UIStyles */,
+				57A4C7A62C4328DD00843905 /* Extensions */,
+				57F04BB32C3F5ABB004C44CA /* SwoopHealthApp.swift */,
+				570AB6222C45A5150026C6C6 /* GoogleService-Info.plist */,
+				576E09F72C446964005463DF /* Launch Screen.storyboard */,
+				57F04BB72C3F5ABD004C44CA /* Assets.xcassets */,
+				57F04BB92C3F5ABD004C44CA /* Preview Content */,
+			);
+			path = SwoopHealth;
+			sourceTree = "<group>";
+		};
+		57F04BB92C3F5ABD004C44CA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				57F04BBA2C3F5ABD004C44CA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57F04BC72C3F72BD004C44CA /* UIStyles */ = {
+			isa = PBXGroup;
+			children = (
+				57F04BC52C3F7266004C44CA /* TextFieldStyles.swift */,
+				57F04BCA2C3F72E2004C44CA /* BackgroundStyles.swift */,
+				57A4C7A72C43299E00843905 /* ButtonStyles.swift */,
+			);
+			path = UIStyles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57716C6F2C6569B70086CC79 /* SwoopHealthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57716C762C6569B70086CC79 /* Build configuration list for PBXNativeTarget "SwoopHealthTests" */;
+			buildPhases = (
+				57716C6C2C6569B70086CC79 /* Sources */,
+				57716C6D2C6569B70086CC79 /* Frameworks */,
+				57716C6E2C6569B70086CC79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57716C752C6569B70086CC79 /* PBXTargetDependency */,
+			);
+			name = SwoopHealthTests;
+			productName = SwoopHealthTests;
+			productReference = 57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		57F04BAF2C3F5ABB004C44CA /* SwoopHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57F04BBE2C3F5ABD004C44CA /* Build configuration list for PBXNativeTarget "SwoopHealth" */;
+			buildPhases = (
+				57F04BAC2C3F5ABB004C44CA /* Sources */,
+				57F04BAD2C3F5ABB004C44CA /* Frameworks */,
+				57F04BAE2C3F5ABB004C44CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwoopHealth;
+			packageProductDependencies = (
+				570AB6282C45A8AF0026C6C6 /* FirebaseAuth */,
+				570AB62A2C45A8B60026C6C6 /* FirebaseFirestoreSwift */,
+				573AB4012C602398005A4862 /* SwiftUIDatePickerDialog */,
+				57540C192C60C41D001F9139 /* Lottie */,
+			);
+			productName = SwoopHealth;
+			productReference = 57F04BB02C3F5ABB004C44CA /* SwoopHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57F04BA82C3F5ABB004C44CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					57716C6F2C6569B70086CC79 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 57F04BAF2C3F5ABB004C44CA;
+					};
+					57F04BAF2C3F5ABB004C44CA = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 57F04BAB2C3F5ABB004C44CA /* Build configuration list for PBXProject "SwoopHealth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57F04BA72C3F5ABB004C44CA;
+			packageReferences = (
+				570AB6242C45A5540026C6C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				573AB4002C602398005A4862 /* XCRemoteSwiftPackageReference "swiftui-date-picker-dialog" */,
+				57540C182C60C41D001F9139 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
+			productRefGroup = 57F04BB12C3F5ABB004C44CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57F04BAF2C3F5ABB004C44CA /* SwoopHealth */,
+				57716C6F2C6569B70086CC79 /* SwoopHealthTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57716C6E2C6569B70086CC79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57F04BAE2C3F5ABB004C44CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576E09F82C446964005463DF /* Launch Screen.storyboard in Resources */,
+				570AB6232C45A5150026C6C6 /* GoogleService-Info.plist in Resources */,
+				57F04BBB2C3F5ABD004C44CA /* Preview Assets.xcassets in Resources */,
+				57F04BB82C3F5ABD004C44CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57716C6C2C6569B70086CC79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */,
+				57716C7B2C656CA20086CC79 /* PatientsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57F04BAC2C3F5ABB004C44CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57F04BB62C3F5ABB004C44CA /* OpeningView.swift in Sources */,
+				573AB3F72C5F41A6005A4862 /* DataService.swift in Sources */,
+				57716C6A2C648BED0086CC79 /* PatientItem.swift in Sources */,
+				57A232D92C471FFD00776D46 /* PatientsView.swift in Sources */,
+				573AB3FB2C5F443B005A4862 /* PatientModel.swift in Sources */,
+				570AB6352C46FFEB0026C6C6 /* UI.swift in Sources */,
+				573AB3FD2C5F5EC9005A4862 /* MessageViewModel.swift in Sources */,
+				57638F5D2C50A93200F00AB0 /* CreateAccountViewModel.swift in Sources */,
+				5701D3BC2C4E034C00168255 /* MessageView.swift in Sources */,
+				57716C4E2C632C430086CC79 /* Event.swift in Sources */,
+				57A4C7A42C4328C500843905 /* Color.swift in Sources */,
+				573AB3F52C5F4167005A4862 /* PatientsViewModel.swift in Sources */,
+				57638F562C509E7900F00AB0 /* Message.swift in Sources */,
+				57F04BC62C3F7266004C44CA /* TextFieldStyles.swift in Sources */,
+				5701D3B72C4DFB7A00168255 /* ProfileSummaryView.swift in Sources */,
+				57638F5B2C50A3F700F00AB0 /* CreateAccountView.swift in Sources */,
+				57F04BC22C3F71CB004C44CA /* ProfileView.swift in Sources */,
+				57716C512C632C7F0086CC79 /* EventSheet.swift in Sources */,
+				572C87392C4336B80033D3C7 /* Menu.swift in Sources */,
+				57A4C7A82C43299E00843905 /* ButtonStyles.swift in Sources */,
+				573AB3F92C5F422B005A4862 /* UserModel.swift in Sources */,
+				576E09F62C446521005463DF /* CalendarView.swift in Sources */,
+				572C87332C4331D00033D3C7 /* SignInSheet.swift in Sources */,
+				578787F02C6C235500794106 /* DoctorListItem.swift in Sources */,
+				572C873B2C43380A0033D3C7 /* MainView.swift in Sources */,
+				5734BB8A2C6A891B009109E7 /* DoctorDetailsView.swift in Sources */,
+				570AB6322C45AAA70026C6C6 /* AuthDataResultModel.swift in Sources */,
+				57F04BCB2C3F72E2004C44CA /* BackgroundStyles.swift in Sources */,
+				576E09F42C43799D005463DF /* HomeView.swift in Sources */,
+				57F04BB42C3F5ABB004C44CA /* SwoopHealthApp.swift in Sources */,
+				57638F582C509E9200F00AB0 /* MessageModel.swift in Sources */,
+				5734BB852C6A8494009109E7 /* DoctorListView.swift in Sources */,
+				573AB3FF2C601F19005A4862 /* CreateEventSheet.swift in Sources */,
+				573AB4042C60648C005A4862 /* CalendarViewModel.swift in Sources */,
+				572C87352C4335070033D3C7 /* InfoSheet.swift in Sources */,
+				573AB4062C6066D8005A4862 /* EventModel.swift in Sources */,
+				578787F52C6C23F400794106 /* InfoItem.swift in Sources */,
+				578787F32C6C23DD00794106 /* ListItem.swift in Sources */,
+				570AB62F2C45A9500026C6C6 /* AuthService.swift in Sources */,
+				5734BB882C6A84D9009109E7 /* DoctorListViewModel.swift in Sources */,
+				578787F82C6C2C4200794106 /* DoctorDetailsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57716C752C6569B70086CC79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57F04BAF2C3F5ABB004C44CA /* SwoopHealth */;
+			targetProxy = 57716C742C6569B70086CC79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		57716C772C6569B70086CC79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXVA5WXT99;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoblucas.SwoopHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwoopHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwoopHealth";
+			};
+			name = Debug;
+		};
+		57716C782C6569B70086CC79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXVA5WXT99;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoblucas.SwoopHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwoopHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwoopHealth";
+			};
+			name = Release;
+		};
+		57F04BBC2C3F5ABD004C44CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57F04BBD2C3F5ABD004C44CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57F04BBF2C3F5ABD004C44CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwoopHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = JXVA5WXT99;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoblucas.SwoopHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		57F04BC02C3F5ABD004C44CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwoopHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = JXVA5WXT99;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoblucas.SwoopHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57716C762C6569B70086CC79 /* Build configuration list for PBXNativeTarget "SwoopHealthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57716C772C6569B70086CC79 /* Debug */,
+				57716C782C6569B70086CC79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57F04BAB2C3F5ABB004C44CA /* Build configuration list for PBXProject "SwoopHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57F04BBC2C3F5ABD004C44CA /* Debug */,
+				57F04BBD2C3F5ABD004C44CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57F04BBE2C3F5ABD004C44CA /* Build configuration list for PBXNativeTarget "SwoopHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57F04BBF2C3F5ABD004C44CA /* Debug */,
+				57F04BC02C3F5ABD004C44CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		570AB6242C45A5540026C6C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+		573AB4002C602398005A4862 /* XCRemoteSwiftPackageReference "swiftui-date-picker-dialog" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-date-picker-dialog.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		57540C182C60C41D001F9139 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		570AB6282C45A8AF0026C6C6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570AB6242C45A5540026C6C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		570AB62A2C45A8B60026C6C6 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570AB6242C45A5540026C6C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		573AB4012C602398005A4862 /* SwiftUIDatePickerDialog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 573AB4002C602398005A4862 /* XCRemoteSwiftPackageReference "swiftui-date-picker-dialog" */;
+			productName = SwiftUIDatePickerDialog;
+		};
+		57540C192C60C41D001F9139 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57540C182C60C41D001F9139 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 57F04BA82C3F5ABB004C44CA /* Project object */;
+}

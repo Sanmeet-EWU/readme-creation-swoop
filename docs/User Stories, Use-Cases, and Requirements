@@ -1,0 +1,106 @@
+Project Proposal for CSCD 350 Summer 2024
+HealthConnect - Hospital Management System
+1.0.0
+ 
+2: SWOOPS
+
+Submitted By
+JACOB LUCAS   jlucas18@gmail.com
+KATRINA MOUA   kmoua9@ewu.edu
+BEN GALES   bgales@ewu.edu
+JOHN MONTEJO   j2montejo@gmail.com
+ 
+Instructor:   	Sanmeet Kaur
+Date:   7/8/2024
+
+  
+Table of Contents
+Part 1: User Stories	2
+Part 2: Use Case Diagrams	4
+Part 3: Requirements and Specifications	5
+Part 4: Glossary	7
+
+
+Part 1: User Stories
+As a Doctor, I want to access patient records so that I can assess their conditions accurately.
+As a Doctor, I want to have my own profile so that users can see my work experience.
+As a Doctor, I want to message patients so that they can see their diagnoses in a secure and private way.
+
+As a Patient, I want to have my own profile so that I can access my medical history within Swoops HealthConnect.
+As a Patient, I want to view my appointment history so that I know my past appointments in the Swoops HealthConnect system. 
+As a Patient, I want to view my appointment details so that I know my medical history for each corresponding appointment. 
+As a Patient, I want to book/cancel an appointment so that I can meet or not meet a doctor. 
+As a Patient, I want to message a Doctor so that I can communicate with a doctor outside of an appointment. 
+
+As a Nurse, I want to tend to patients by administering medicine, performing tests, or providing general care so that the patient is cared for.
+As a Nurse, I want to record/update medical history so that the patient’s information is up to date for the Doctor to view.
+As a Nurse, I want to view my shift schedule so that I know when I’m working.
+As a Nurse, I want to communicate with doctors so that I can know which patients to tend to.
+As a Nurse, I want to communicate with administrators so that I can schedule time off.
+
+As an Admin, I need full access to the management system, so that I can perform administrative duties and correct records.
+As an Admin, I want to view the medicine inventory so that I can order medicine when necessary. 
+As an admin, I want to add items to inventory so that system and physical inventory are updated.
+As an admin, I want to login into the software system so that I may perform administrative functions.
+As an admin, I want access to read patient information so that I may validate patient records.
+As an admin, I want access to write patient information so that I may enter delete/update patient information.
+As an admin, I want to enter new patient objects, so that new patient data is added to the system by an authorized user.
+As an admin, I want to send messages to all other users in the system.
+As an admin, I want to receive messages from all other users in the system.
+
+
+Part 2: Use Case Diagrams
+
+
+Part 3: Requirements and Specifications
+Requirement: There shall be a feature that allows Doctors to view the medical history of each patient in the system.
+Specification: Medical history will only be viewable by certain medical staff.
+
+Requirement: There shall be a feature that allows Doctors to order inventory for patients.
+Specification: Doctors can submit prescription refill forms for patients.
+
+Requirement: There shall be a feature that allows Patients to view their patient history and their appointment details for each upcoming and past appointments. 
+Specification: Limited personal medical history will be viewable by the Patient. 
+
+Requirement: There shall be a feature that allows Patients to book or cancel an appointment with a doctor.
+Specification: The patient can see the available dates to see a doctor and can cancel their appointment.
+
+Requirement: There shall be a feature that allows Nurses to view their shift schedule. 
+Specification: All HealthConnect staff will be able to view all staffs’ schedules.
+
+Requirement: There shall be a feature that allows Admin to view medicine inventory.
+Specification: The medicine inventory is only viewable by Admin and Nurses. 
+
+Requirement: There will be a messaging feature where patients can send messages to doctors and patients can receive lab results.
+Specification: Messages can be written and read when logged in.
+
+  
+Part 4: Glossary
+appointment details: a record of a patient’s general checkup, lab work (if any), diagnosis, prescriptions, etc.
+medical history: a patient’s past appointments and appointment details that are recorded in HealthConnect
+medicine inventory: the current stock of prescription medicine in the hospital 
+shift schedule: the hours that a staff member is working, including their breaks
+validate: the act of authenticating patient records prior to publication 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
