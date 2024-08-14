@@ -35,6 +35,7 @@ struct EventSheet: View {
                 .frame(width: 45, height: 5)
                 .foregroundStyle(Color(.systemGray4))
                 .padding(.bottom)
+                .padding(.top, 12)
             
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 10) {
@@ -53,6 +54,7 @@ struct EventSheet: View {
                         Text(name)
                             .font(.system(size: 17, weight: .medium))
                     }
+                    
                     Spacer()
                 }
                 

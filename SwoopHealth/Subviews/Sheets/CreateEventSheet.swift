@@ -161,10 +161,11 @@ extension CreateEventSheet {
     
     private var patientList: some View {
         ScrollView(.horizontal, showsIndicators: false) {
+            let filteredPatients = filterPatients(viewModel.patients)
             VStack(alignment: .leading) {
                 HStack {
-                    ForEach(0..<viewModel.patients.count / 2, id: \.self) { index in
-                        let patient = viewModel.patients[index]
+                    ForEach(0..<filteredPatients.count / 2, id: \.self) { index in
+                        let patient = filteredPatients[index]
                         Button {
                             viewModel.selectedPatient = patient
                         } label: {
@@ -184,8 +185,8 @@ extension CreateEventSheet {
                 .padding(.horizontal, 12)
                 
                 HStack {
-                    ForEach(viewModel.patients.count / 2..<viewModel.patients.count, id: \.self) { index in
-                        let patient = viewModel.patients[index]
+                    ForEach(filteredPatients.count / 2..<filteredPatients.count, id: \.self) { index in
+                        let patient = filteredPatients[index]
                         Button {
                             viewModel.selectedPatient = patient
                         } label: {
@@ -206,5 +207,11 @@ extension CreateEventSheet {
             }
         }
         .padding(.vertical)
+    }
+    
+    private func filterPatients(_ users: [UserModel]) -> [UserModel] {
+        return users.filter { user in
+            user.type.rawValue == "patient"
+        }
     }
 }

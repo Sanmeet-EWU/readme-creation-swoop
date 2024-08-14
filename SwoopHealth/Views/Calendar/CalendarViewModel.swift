@@ -5,7 +5,7 @@
 //  Created by Jacob Lucas on 8/4/24.
 //
 
-import Foundation
+import SwiftUI
 
 class CalendarViewModel: ObservableObject {
     
@@ -27,6 +27,9 @@ class CalendarViewModel: ObservableObject {
         }
     }
     
+    @AppStorage("user_type") var currentUserType: String?
+    @AppStorage("user_id") var currentUserID: String?
+    
     init() {
         getEvents()
         getPatients()
@@ -35,9 +38,9 @@ class CalendarViewModel: ObservableObject {
     func getPatients() {
         let dataInstance = DataService.shared
         
-        dataInstance.getPatients { (returnedPatients) in
-            if let patients = returnedPatients {
-                self.patients = patients
+        dataInstance.getUsers { (returnedUsers) in
+            if let users = returnedUsers {
+                self.patients = users
             }
         }
     }
@@ -98,9 +101,30 @@ class CalendarViewModel: ObservableObject {
         }
 
         let selectedDateStartOfDay = startOfDay(for: selectedDate)
+        let filterByType = filterByAccountType(events)
         
-        return events.filter {
+        return filterByType.filter {
             startOfDay(for: $0.eventDate) == selectedDateStartOfDay
+        }
+    }
+    
+    private func filterByAccountType(_ events: [EventModel]) -> [EventModel] {
+        guard let userType = currentUserType else {
+            print("Error unwrapping current user type.")
+            return events
+        }
+        
+        guard let userID = currentUserID else {
+            print("Error unwrapping current user id.")
+            return events
+        }
+        
+        if (userType == "patient") {
+            return events.filter { event in
+                event.user?.id == userID
+            }
+        } else {
+            return events
         }
     }
     

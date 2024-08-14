@@ -19,9 +19,9 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 15) {
                     logo
-                    orderInventory
+                    heartRate
                     upcomingAppointments
-                    labResults
+                    searchDoctors
                     
                     if let userType = currentUserType,
                        userType == "Doctor" || userType == "Nurse" {
@@ -61,16 +61,11 @@ extension HomeView {
             VStack {
                 Event(event: EventModel(user: UserModel(id: "", name: "Jacob Lucas", dob: "07/26/2001", email: "", phone: "", type: .patient, doctor: ""), eventDate: Date(), title: "Flu Shot", description: "Flu Shot"))
             }
-            .background {
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(lineWidth: 1)
-                    .foregroundStyle(Color(.systemGray5))
-            }
         }
         .padding(.horizontal)
     }
     
-    private var orderInventory: some View {
+    private var heartRate: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 ZStack {
@@ -131,7 +126,7 @@ extension HomeView {
         .padding(.horizontal)
     }
     
-    private var labResults: some View {
+    private var searchDoctors: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
                     .foregroundStyle(Color(.systemGray6))
@@ -153,8 +148,8 @@ extension HomeView {
                         .frame(width: 90, height: 160)
                         .padding(.vertical, 18)
                     
-                    Button {
-                        
+                    NavigationLink {
+                        DoctorListView()
                     } label: {
                         Text("Search")
                     }
@@ -166,7 +161,6 @@ extension HomeView {
                 .padding()
             }
             .padding(.horizontal)
-//            .frame(height: UIScreen.main.bounds.height / 3)
     }
 }
 

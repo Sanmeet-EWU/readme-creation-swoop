@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @State var logOutAlert: Bool = false
+    
     @Environment(\.colorScheme) var colorScheme
     
     @AppStorage("name") var currentUserName: String?
@@ -102,7 +104,7 @@ struct ProfileView: View {
                         isLast: true
                     )
                     .onTapGesture {
-                        signOut()
+                        logOutAlert.toggle()
                     }
                 }
                 .background {
@@ -114,10 +116,20 @@ struct ProfileView: View {
                 Spacer()
             }
             .padding(.horizontal)
+            .alert(isPresented: $logOutAlert) {
+                SwiftUI.Alert(
+                    title: Text("Log Out"),
+                    message: Text("Are you sure you want to log out?"),
+                    primaryButton: .destructive(Text("Log Out")) {
+                        logOut()
+                    },
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
+            }
         }
     }
     
-    private func signOut() {
+    private func logOut() {
         let authInstance = AuthService.shared
         
         Task {
@@ -132,67 +144,4 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
-        .preferredColorScheme(.light)
-}
-
-struct ListItem: View {
-    let icon: String
-    let title: String
-    
-    let hideIcon: Bool?
-    let isLast: Bool
-    
-    init(icon: String, title: String, hideIcon: Bool? = nil, isLast: Bool = false) {
-        self.icon = icon
-        self.title = title
-        self.hideIcon = hideIcon
-        self.isLast = isLast
-    }
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            HStack(spacing: 15) {
-                Image(systemName: icon)
-                    .font(.system(size: 15))
-                Text(title)
-                    .font(.system(size: 15, weight: .medium))
-                Spacer()
-                if hideIcon == nil {
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 13, weight: .medium))
-                }
-            }
-            .padding(16)
-            
-            if (!isLast) {
-                Rectangle()
-                    .frame(height: 1)
-                    .padding(.leading, 16)
-                    .foregroundStyle(Color(.systemGray5))
-            }
-        }
-    }
-}
-
-struct InfoItem: View {
-    let emoji: String
-    let title: String
-    let description: String
-    var body: some View {
-        VStack(spacing: 3) {
-            Text(emoji)
-                .padding(12)
-                .background {
-                    Circle()
-                        .foregroundStyle(Color(.systemGray6))
-                        .opacity(0.5)
-                }
-            Text(title)
-                .font(.system(size: 13, weight: .medium))
-            Text(description)
-                .font(.system(size: 12))
-                .foregroundStyle(Color(.systemGray))
-        }
-        .padding(.vertical, 6)
-    }
 }

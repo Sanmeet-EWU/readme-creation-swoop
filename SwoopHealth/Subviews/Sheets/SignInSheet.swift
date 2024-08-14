@@ -25,7 +25,7 @@ struct SignInSheet: View {
             
             VStack(spacing: 10) {
                 TextField("email", text: $email)
-                TextField("password", text: $password)
+                SecureField("password", text: $password)
             }
             .padding(.vertical, 25)
             .autocorrectionDisabled()

@@ -1,31 +1,42 @@
 //
-//  PatientsView.swift
+//  DoctorListView.swift
 //  SwoopHealth
 //
-//  Created by Jacob Lucas on 7/16/24.
+//  Created by Jacob Lucas on 8/12/24.
 //
 
 import SwiftUI
 
-struct PatientsView: View {
+struct DoctorListView: View {
     
-    @State var search: String = ""
-    
-    @StateObject var viewModel = PatientsViewModel()
+    @StateObject var viewModel = DoctorListViewModel()
     @AppStorage("user_type") var currentUserType: String?
+    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Messages")
-                    .font(.system(size: 22, weight: .medium))
+                
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .font(.system(size: 16, weight: .medium))
+                        .padding(6)
+                        .background {
+                            Circle()
+                                .foregroundStyle(Color(.systemGray6))
+                        }
+                }
+                .buttonStyle(ButtonScaleEffectStyle())
                 
                 HStack {
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .foregroundStyle(Color.theme.blue)
                             .fontWeight(.medium)
-                        TextField("Search by name or email", text: $search)
+                        TextField("Search by name or email", text: $viewModel.search)
                     }
                     .padding(.horizontal)
                     .background {
@@ -37,7 +48,6 @@ struct PatientsView: View {
                         }
                     }
                     .padding(.vertical, 12)
-                    
                     
                     Image(systemName: "slider.horizontal.3")
                         .foregroundStyle(.white)
@@ -52,21 +62,18 @@ struct PatientsView: View {
                         }
                 }
                 
-                if viewModel.favoriteFilteredPatients.count > 0 {
+                if viewModel.favoriteFilteredDoctors.count > 0 {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Bookmarked")
                             .font(.system(size: 14))
                             .foregroundStyle(Color(.systemGray3))
-                        ForEach(0..<viewModel.favoriteFilteredPatients.count, id: \.self) { index in
-                            let patient = viewModel.favoriteFilteredPatients[index]
+                        ForEach(0..<viewModel.favoriteFilteredDoctors.count, id: \.self) { index in
+                            let doctor = viewModel.favoriteFilteredDoctors[index]
                             NavigationLink {
-                                MessageView(
-                                    user: patient,
-                                    secondUserID: patient.id
-                                )
+                                DoctorDetailsView(doctor: doctor)
                             } label: {
-                                PatientItem(
-                                    user: patient,
+                                DoctorItem(
+                                    user: doctor,
                                     viewModel: viewModel
                                 )
                             }
@@ -77,17 +84,14 @@ struct PatientsView: View {
                 }
                 
                 VStack(spacing: 0) {
-                    ForEach(0..<viewModel.filteredPatients.count, id: \.self) { index in
-                        let patient = viewModel.filteredPatients[index]
+                    ForEach(0..<viewModel.filteredDoctors.count, id: \.self) { index in
+                        let doctor = viewModel.filteredDoctors[index]
                         NavigationLink {
-                            MessageView(
-                                user: patient,
-                                secondUserID: patient.id
-                            )
+                            DoctorDetailsView(doctor: doctor)
                         } label: {
-                            if (!viewModel.favoritePatients.contains(patient.id)) {
-                                PatientItem(
-                                    user: patient,
+                            if (!viewModel.favoriteDoctors.contains(doctor.id)) {
+                                DoctorItem(
+                                    user: doctor,
                                     viewModel: viewModel
                                 )
                             }
@@ -102,7 +106,6 @@ struct PatientsView: View {
         }
     }
 }
-
 #Preview {
-    PatientsView()
+    DoctorListView()
 }

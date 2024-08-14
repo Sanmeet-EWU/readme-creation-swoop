@@ -27,8 +27,7 @@ class AuthService {
         return AuthDataResultModel(user: authDataResult.user)
     }
     
-    func createNewUserInDatabase(userModel: UserModel, completion: @escaping (_ success: Bool) -> ()
-    ) {
+    func createNewUserInDatabase(userModel: UserModel, completion: @escaping (_ success: Bool) -> ()) {
         var userData = encodeToDictionary(from: userModel) ?? [:]
         
         if let doctor = userModel.doctor, !doctor.isEmpty {

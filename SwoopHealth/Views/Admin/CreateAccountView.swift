@@ -153,7 +153,7 @@ struct UserCredentials: View {
                     Spacer()
                 }
                 TextField("Email", text: $viewModel.email)
-                TextField("password", text: $viewModel.password)
+                SecureField("password", text: $viewModel.password)
             }
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)

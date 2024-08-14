@@ -14,6 +14,7 @@ struct CalendarView: View {
     
     @StateObject var viewModel = CalendarViewModel()
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("user_type") var currentUserType: String?
     
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -42,23 +43,25 @@ struct CalendarView: View {
             .padding(.horizontal)
         }
         .overlay(alignment: .bottomTrailing) {
-            Button {
-                showCreateEventSheet.toggle()
-            } label: {
-                ZStack {
-                    Circle()
-                        .foregroundStyle(.ultraThinMaterial)
-                        .frame(width: 58, height: 58)
-                    Image(systemName: "plus")
-                        .font(.system(size: 28))
-                        .foregroundStyle(Color.theme.blue)
+            if let userType = currentUserType, userType != "patient" {
+                Button {
+                    showCreateEventSheet.toggle()
+                } label: {
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.ultraThinMaterial)
+                            .frame(width: 58, height: 58)
+                        Image(systemName: "plus")
+                            .font(.system(size: 28))
+                            .foregroundStyle(Color.theme.blue)
+                    }
                 }
+                .buttonStyle(ButtonScaleEffectStyle())
+                .sheet(isPresented: $showCreateEventSheet) {
+                    CreateEventSheet(viewModel: viewModel)
+                }
+                .padding()
             }
-            .buttonStyle(ButtonScaleEffectStyle())
-            .sheet(isPresented: $showCreateEventSheet) {
-                CreateEventSheet(viewModel: viewModel)
-            }
-            .padding()
         }
     }
 }

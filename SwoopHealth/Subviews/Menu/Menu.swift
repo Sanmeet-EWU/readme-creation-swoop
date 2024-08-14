@@ -12,28 +12,28 @@ struct Menu: View {
     let icons: [String] = [
         "house.fill",
         "calendar",
-        "stethoscope",
+        "message.fill",
         "person.fill"
     ]
     
     let iconsAdmin: [String] = [
         "person.3.fill",
         "calendar",
-        "stethoscope",
+        "message.fill",
         "person.fill"
     ]
     
     let titles: [String] = [
         "Home",
         "Events",
-        "Patients",
+        "Messages",
         "Profile"
     ]
     
     let titlesAdmin: [String] = [
         "Admin",
         "Events",
-        "Patients",
+        "Messages",
         "Profile"
     ]
     

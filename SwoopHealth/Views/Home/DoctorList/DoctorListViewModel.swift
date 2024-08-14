@@ -1,13 +1,13 @@
 //
-//  PatientsViewModel.swift
+//  DoctorListViewModel.swift
 //  SwoopHealth
 //
-//  Created by Jacob Lucas on 8/3/24.
+//  Created by Jacob Lucas on 8/12/24.
 //
 
 import SwiftUI
 
-class PatientsViewModel: ObservableObject {
+class DoctorListViewModel: ObservableObject {
     
     enum SortOption {
         case name
@@ -15,111 +15,107 @@ class PatientsViewModel: ObservableObject {
     }
     
     @Published var search: String = ""
-    @Published var patients: [UserModel] = []
+    @Published var doctors: [UserModel] = []
     @Published var sortOption: SortOption = .name
-    @Published var favoritePatients: Set<String> = []
+    @Published var favoriteDoctors: Set<String> = []
     
     @AppStorage("user_type") var currentUserType: String?
     
-    private let allFavoritesKey = "all_favorites_key"
+    private let doctorsFavoritesKey = "doctors_favorites_key"
     
-    var filteredPatients: [UserModel] {
+    var filteredDoctors: [UserModel] {
         if search.isEmpty {
             return filterWithoutSearch(
-                patients,
+                doctors,
                 currentUserType
             )
         } else {
             return filterWithSearch(
-                patients,
+                doctors,
                 currentUserType,
                 search
             )
         }
     }
     
-    var sortedPatients: [UserModel] {
+    var sortedDoctors: [UserModel] {
         switch sortOption {
         case .name:
-            return filteredPatients.sorted {
+            return filteredDoctors.sorted {
                 $0.name.lowercased() < $1.name.lowercased()
             }
         case .type:
-            return filteredPatients.sorted {
+            return filteredDoctors.sorted {
                 $0.type.rawValue < $1.type.rawValue
             }
         }
     }
     
-    var favoriteFilteredPatients: [UserModel] {
-        return filteredPatients.filter {
-            favoritePatients.contains($0.id)
+    var favoriteFilteredDoctors: [UserModel] {
+        return filteredDoctors.filter {
+            favoriteDoctors.contains($0.id)
         }
     }
     
     init() {
-        getPatients()
+        getDoctors()
         loadFavorites()
     }
     
-    private func getPatients() {
+    private func getDoctors() {
         let dataInstance = DataService.shared
         dataInstance.getUsers { (returnedUsers) in
             if let users = returnedUsers {
-                self.patients = users
+                self.doctors = users
             }
         }
     }
     
     private func loadFavorites() {
-        if let savedFavorites = UserDefaults.standard.array(forKey: allFavoritesKey) as? [String] {
-            favoritePatients = Set(savedFavorites)
+        if let savedFavorites = UserDefaults.standard.array(forKey: doctorsFavoritesKey) as? [String] {
+            favoriteDoctors = Set(savedFavorites)
         }
     }
     
-    func toggleFavorite(patient: UserModel) {
-        if favoritePatients.contains(patient.id) {
-            favoritePatients.remove(patient.id)
+    func toggleFavorite(doctor: UserModel) {
+        if favoriteDoctors.contains(doctor.id) {
+            favoriteDoctors.remove(doctor.id)
         } else {
-            favoritePatients.insert(patient.id)
+            favoriteDoctors.insert(doctor.id)
         }
-         saveFavorites() // Save favorites after toggling
+         saveFavorites()
     }
     
     private func saveFavorites() {
-        UserDefaults.standard.set(Array(favoritePatients), forKey: allFavoritesKey)
+        UserDefaults.standard.set(Array(favoriteDoctors), forKey: doctorsFavoritesKey)
     }
 
     // Current user type can be "patient", "admin", "nurse", "doctor"
-    func filterWithoutSearch(_ patients: [UserModel], _ currentUserType: String?) -> [UserModel] {
+    func filterWithoutSearch(_ doctors: [UserModel], _ currentUserType: String?) -> [UserModel] {
         guard let userType = currentUserType else {
             print("Unable to unwrap current user type.")
             return []
         }
         
-        return patients.filter {
+        return doctors.filter {
             if userType == "patient" {
-                return $0.type.rawValue == "doctor" ||
-                       $0.type.rawValue == "nurse" ||
-                       $0.type.rawValue == "admin"
+                return $0.type.rawValue == "doctor"
             } else {
-                return true
+                return false
             }
         }
     }
 
     // Current user type can be "patient", "admin", "nurse", "doctor"
-    func filterWithSearch(_ patients: [UserModel], _ currentUserType: String?, _ search: String) -> [UserModel] {
+    func filterWithSearch(_ doctors: [UserModel], _ currentUserType: String?, _ search: String) -> [UserModel] {
         guard let userType = currentUserType else {
             print("Unable to unwrap current user type.")
             return []
         }
         
-        return patients.filter {
+        return doctors.filter {
             if userType == "patient" {
-                return ($0.type.rawValue == "doctor" ||
-                        $0.type.rawValue == "nurse" ||
-                        $0.type.rawValue == "admin") &&
+                return ($0.type.rawValue == "doctor") &&
                 ($0.name.lowercased().contains(search.lowercased()) ||
                  $0.email.lowercased().contains(search.lowercased()))
             } else {

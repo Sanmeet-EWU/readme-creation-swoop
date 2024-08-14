@@ -22,33 +22,34 @@ class DataService {
     @AppStorage("user_id") var currentUserID: String?
     
     // MARK: PATIENT FUNCTIONS
-    func getPatients(completion: @escaping (_ patients: [UserModel]?) -> ()) {
+    func getUsers(completion: @escaping (_ users: [UserModel]?) -> ()) {
         REF_USERS.getDocuments { (returnedSnapshot, returnedError) in
             if let error = returnedError {
-                print("Error getting patients from Firebase: ", error)
+                print("Error getting users from Firebase: ", error)
                 completion(nil)
                 return
             }
             
             guard let snapshot = returnedSnapshot else {
-                print("Error unwrapping patient snapshots.")
+                print("Error unwrapping users snapshots.")
                 completion(nil)
                 return
             }
             
-            var patients: [UserModel] = []
+            var users: [UserModel] = []
             
             for document in snapshot.documents {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: document.data(), options: [])
-                    let patient = try JSONDecoder().decode(UserModel.self, from: jsonData)
-                    patients.append(patient)
+                    let user = try JSONDecoder().decode(UserModel.self, from: jsonData)
+                    users.append(user)
                 } catch {
-                    print("Error parsing patient data for document.")
+                    print("Error parsing user data for document.")
                 }
             }
             
-            completion(patients)
+            print("Success getting users: ", users)
+            completion(users)
         }
     }
 
@@ -115,11 +116,6 @@ class DataService {
     
     // MARK: EVENT FUNCTIONS
     func saveEvent(event: EventModel, completion: @escaping (_ success: Bool) -> ()) {
-        guard let userID = currentUserID else {
-            print("Unable to unwrap user id.")
-            return
-        }
-        
         do {
             let jsonData = try JSONEncoder().encode(event)
             let messageData = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any]
@@ -163,6 +159,26 @@ class DataService {
             }
 
             completion(messages)
+        }
+    }
+    
+    func updateUserDoctor(doctorName: String, completion: @escaping (_ success: Bool) -> ()) {
+        guard let userID = currentUserID else {
+            print("Error unwrapping current user id.")
+            completion(false)
+            return
+        }
+        
+        let userReference = REF_USERS.document(userID)
+        userReference.updateData(["doctor": doctorName]) { (returnedError) in
+            if let error = returnedError {
+                print("Error updating doctor reference in user document. \(error)")
+                completion(false)
+                return
+            }
+            
+            UserDefaults.standard.set(doctorName, forKey: "doctor")
+            completion(true)
         }
     }
 }

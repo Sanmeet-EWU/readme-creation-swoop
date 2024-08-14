@@ -19,6 +19,9 @@
 		572C87352C4335070033D3C7 /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87342C4335070033D3C7 /* InfoSheet.swift */; };
 		572C87392C4336B80033D3C7 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87382C4336B80033D3C7 /* Menu.swift */; };
 		572C873B2C43380A0033D3C7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C873A2C43380A0033D3C7 /* MainView.swift */; };
+		5734BB852C6A8494009109E7 /* DoctorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BB842C6A8494009109E7 /* DoctorListView.swift */; };
+		5734BB882C6A84D9009109E7 /* DoctorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BB872C6A84D9009109E7 /* DoctorListViewModel.swift */; };
+		5734BB8A2C6A891B009109E7 /* DoctorDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BB892C6A891B009109E7 /* DoctorDetailsView.swift */; };
 		573AB3F52C5F4167005A4862 /* PatientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3F42C5F4167005A4862 /* PatientsViewModel.swift */; };
 		573AB3F72C5F41A6005A4862 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3F62C5F41A6005A4862 /* DataService.swift */; };
 		573AB3F92C5F422B005A4862 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AB3F82C5F422B005A4862 /* UserModel.swift */; };
@@ -41,6 +44,10 @@
 		57716C6A2C648BED0086CC79 /* PatientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C692C648BED0086CC79 /* PatientItem.swift */; };
 		57716C7B2C656CA20086CC79 /* PatientsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */; };
 		57716C7D2C656E320086CC79 /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */; };
+		578787F02C6C235500794106 /* DoctorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787EF2C6C235500794106 /* DoctorListItem.swift */; };
+		578787F32C6C23DD00794106 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F22C6C23DD00794106 /* ListItem.swift */; };
+		578787F52C6C23F400794106 /* InfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F42C6C23F400794106 /* InfoItem.swift */; };
+		578787F82C6C2C4200794106 /* DoctorDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578787F72C6C2C4200794106 /* DoctorDetailsViewModel.swift */; };
 		57A232D92C471FFD00776D46 /* PatientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A232D82C471FFD00776D46 /* PatientsView.swift */; };
 		57A4C7A42C4328C500843905 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4C7A32C4328C500843905 /* Color.swift */; };
 		57A4C7A82C43299E00843905 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4C7A72C43299E00843905 /* ButtonStyles.swift */; };
@@ -74,6 +81,9 @@
 		572C87342C4335070033D3C7 /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		572C87382C4336B80033D3C7 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		572C873A2C43380A0033D3C7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5734BB842C6A8494009109E7 /* DoctorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListView.swift; sourceTree = "<group>"; };
+		5734BB872C6A84D9009109E7 /* DoctorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewModel.swift; sourceTree = "<group>"; };
+		5734BB892C6A891B009109E7 /* DoctorDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailsView.swift; sourceTree = "<group>"; };
 		573AB3F42C5F4167005A4862 /* PatientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModel.swift; sourceTree = "<group>"; };
 		573AB3F62C5F41A6005A4862 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		573AB3F82C5F422B005A4862 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -95,6 +105,10 @@
 		57716C702C6569B70086CC79 /* SwoopHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwoopHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57716C7A2C656CA20086CC79 /* PatientsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsViewModelTest.swift; sourceTree = "<group>"; };
 		57716C7C2C656E320086CC79 /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
+		578787EF2C6C235500794106 /* DoctorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListItem.swift; sourceTree = "<group>"; };
+		578787F22C6C23DD00794106 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		578787F42C6C23F400794106 /* InfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItem.swift; sourceTree = "<group>"; };
+		578787F72C6C2C4200794106 /* DoctorDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailsViewModel.swift; sourceTree = "<group>"; };
 		57A232D82C471FFD00776D46 /* PatientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsView.swift; sourceTree = "<group>"; };
 		57A4C7A32C4328C500843905 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		57A4C7A72C43299E00843905 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -240,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				576E09F32C43799D005463DF /* HomeView.swift */,
+				5734BB862C6A84BA009109E7 /* DoctorList */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -259,6 +274,16 @@
 				572C873A2C43380A0033D3C7 /* MainView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5734BB862C6A84BA009109E7 /* DoctorList */ = {
+			isa = PBXGroup;
+			children = (
+				5734BB842C6A8494009109E7 /* DoctorListView.swift */,
+				5734BB872C6A84D9009109E7 /* DoctorListViewModel.swift */,
+				578787F62C6C2C2D00794106 /* DoctorDetails */,
+			);
+			path = DoctorList;
 			sourceTree = "<group>";
 		};
 		573AB4072C60A229005A4862 /* Messages */ = {
@@ -303,6 +328,32 @@
 			path = SwoopHealthTests;
 			sourceTree = "<group>";
 		};
+		578787EE2C6C234A00794106 /* Doctors */ = {
+			isa = PBXGroup;
+			children = (
+				578787EF2C6C235500794106 /* DoctorListItem.swift */,
+			);
+			path = Doctors;
+			sourceTree = "<group>";
+		};
+		578787F12C6C23D200794106 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				578787F22C6C23DD00794106 /* ListItem.swift */,
+				578787F42C6C23F400794106 /* InfoItem.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		578787F62C6C2C2D00794106 /* DoctorDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5734BB892C6A891B009109E7 /* DoctorDetailsView.swift */,
+				578787F72C6C2C4200794106 /* DoctorDetailsViewModel.swift */,
+			);
+			path = DoctorDetails;
+			sourceTree = "<group>";
+		};
 		57A4C7A52C4328D700843905 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +389,8 @@
 		57A4C7AA2C43315400843905 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				578787F12C6C23D200794106 /* Profile */,
+				578787EE2C6C234A00794106 /* Doctors */,
 				57716C682C648BE60086CC79 /* Patients */,
 				57716C4F2C632C710086CC79 /* Event */,
 				573AB4072C60A229005A4862 /* Messages */,
@@ -547,17 +600,24 @@
 				573AB3F92C5F422B005A4862 /* UserModel.swift in Sources */,
 				576E09F62C446521005463DF /* CalendarView.swift in Sources */,
 				572C87332C4331D00033D3C7 /* SignInSheet.swift in Sources */,
+				578787F02C6C235500794106 /* DoctorListItem.swift in Sources */,
 				572C873B2C43380A0033D3C7 /* MainView.swift in Sources */,
+				5734BB8A2C6A891B009109E7 /* DoctorDetailsView.swift in Sources */,
 				570AB6322C45AAA70026C6C6 /* AuthDataResultModel.swift in Sources */,
 				57F04BCB2C3F72E2004C44CA /* BackgroundStyles.swift in Sources */,
 				576E09F42C43799D005463DF /* HomeView.swift in Sources */,
 				57F04BB42C3F5ABB004C44CA /* SwoopHealthApp.swift in Sources */,
 				57638F582C509E9200F00AB0 /* MessageModel.swift in Sources */,
+				5734BB852C6A8494009109E7 /* DoctorListView.swift in Sources */,
 				573AB3FF2C601F19005A4862 /* CreateEventSheet.swift in Sources */,
 				573AB4042C60648C005A4862 /* CalendarViewModel.swift in Sources */,
 				572C87352C4335070033D3C7 /* InfoSheet.swift in Sources */,
 				573AB4062C6066D8005A4862 /* EventModel.swift in Sources */,
+				578787F52C6C23F400794106 /* InfoItem.swift in Sources */,
+				578787F32C6C23DD00794106 /* ListItem.swift in Sources */,
 				570AB62F2C45A9500026C6C6 /* AuthService.swift in Sources */,
+				5734BB882C6A84D9009109E7 /* DoctorListViewModel.swift in Sources */,
+				578787F82C6C2C4200794106 /* DoctorDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,11 +798,12 @@
 				DEVELOPMENT_TEAM = JXVA5WXT99;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -773,11 +834,12 @@
 				DEVELOPMENT_TEAM = JXVA5WXT99;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
