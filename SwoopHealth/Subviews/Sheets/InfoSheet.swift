@@ -16,9 +16,10 @@ struct InfoSheet: View {
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 15)
+            Capsule()
                 .frame(width: 38, height: 4)
                 .foregroundStyle(Color(.systemGray5))
+                .padding(.top, 12)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
@@ -31,7 +32,7 @@ struct InfoSheet: View {
                     .lineSpacing(4)
             }
             .padding(.vertical)
-
+            
         }
         .padding(.horizontal)
         .padding(.bottom)

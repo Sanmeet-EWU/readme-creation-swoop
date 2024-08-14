@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-enum UserTypeEnum: String, CaseIterable, Identifiable, Codable {
+enum UserTypeEnum: String, CaseIterable, Identifiable, Codable, Equatable {
     case patient = "patient"
     case doctor = "doctor"
     case nurse = "nurse"

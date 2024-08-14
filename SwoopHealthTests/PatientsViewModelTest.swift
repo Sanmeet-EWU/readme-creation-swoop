@@ -41,56 +41,70 @@ final class PatientsViewModelTest: XCTestCase {
     }
     
     func testFilteredPatientsWithSearch() throws {
-        //pulled from Katrina's discord message 8/9/24 JM
         viewModel.currentUserType = "patient"
-        viewModel.patients = patients
-        viewModel.search = "Alice"
-
-        let filtered = viewModel.filteredPatients
-
-        XCTAssertEqual(filtered.count, 0, "Filtered patients with search test returned a user that doesn't match the specified filter.")   
-    }
-
-    func testFilteredPatientsWithNameSearch() throws {
-        viewModel.currentUserType = "patient"
-        viewModel.patients = patients
+        viewModel.patients = [
+            UserModel(id: "1", name: "Bob Johnson", dob: "01/01/1980", email: "bob@example.com", phone: "1234567890", type: .doctor, doctor: nil),
+            UserModel(id: "2", name: "Alice Smith", dob: "02/02/1990", email: "alice@example.com", phone: "0987654321", type: .nurse, doctor: nil)
+        ]
         viewModel.search = "Bob Johnson"
 
         let filtered = viewModel.filteredPatients
 
-        XCTAssertEqual(filtered.count, 1, "Filtered patients with name search test did not return the correct filtered patient count.") 
-        XCTAssertEqual(filtered.name, "Bob Johnson" , "Filtered patients with name search test did not return the test patient name "Bob Johnson".") 
-
+        XCTAssertEqual(filtered.count, 1, "Filtered patients with search test did not return the correct filtered patient count.")
+        XCTAssertEqual(filtered.first?.name, "Bob Johnson", "Filtered patients with search test did not return the correct patient name.")
     }
-    
+
+    func testFilteredPatientsWithNameSearch() throws {
+        viewModel.currentUserType = "patient"
+        viewModel.patients = [
+            UserModel(id: "1", name: "Bob Johnson", dob: "01/01/1980", email: "bob@example.com", phone: "1234567890", type: .doctor, doctor: nil),
+            UserModel(id: "2", name: "Alice Smith", dob: "02/02/1990", email: "alice@example.com", phone: "0987654321", type: .nurse, doctor: nil)
+        ]
+        viewModel.search = "Bob Johnson"
+
+        let filtered = viewModel.filteredPatients
+
+        XCTAssertEqual(filtered.count, 1, "Filtered patients with name search test did not return the correct filtered patient count.")
+        XCTAssertEqual(filtered.first?.name, "Bob Johnson", "Filtered patients with name search test did not return the correct patient name 'Bob Johnson'.")
+    }
     
     func testSortedPatientsByName() throws {
         viewModel.currentUserType = "patient"
-        viewModel.patients = patients
-        viewModel.order(by: "name", descending: true)
+        viewModel.patients = [
+            UserModel(id: "1", name: "Charlie Brown", dob: "01/01/1980", email: "charlie@example.com", phone: "1234567890", type: .doctor, doctor: nil),
+            UserModel(id: "2", name: "Bob Johnson", dob: "02/02/1990", email: "bob@example.com", phone: "0987654321", type: .nurse, doctor: nil),
+            UserModel(id: "3", name: "Alice Smith", dob: "03/03/2000", email: "alice@example.com", phone: "1122334455", type: .admin, doctor: nil)
+        ]
+        viewModel.sortOption = .name
 
         let sorted = viewModel.sortedPatients
-        // check use of built in sorted() correct for assert statement
-        XCTAssertTrue(sorted, patients.sorted(), "Sorted patients by name should return patients in alphabetical order.")
+        let expected = viewModel.patients.sorted { $0.name.lowercased() < $1.name.lowercased() }
+
+        XCTAssertEqual(sorted.map { $0.id }, expected.map { $0.id }, "Sorted patients by name should return patients in alphabetical order.")
     }
     
     func testSortedPatientsByType() throws {
         viewModel.currentUserType = "patient"
-        viewModel.patients = patients
-        viewModel.order(by: "type",)
+        viewModel.patients = [
+            UserModel(id: "1", name: "Charlie Brown", dob: "01/01/1980", email: "charlie@example.com", phone: "1234567890", type: .doctor, doctor: nil),
+            UserModel(id: "2", name: "Bob Johnson", dob: "02/02/1990", email: "bob@example.com", phone: "0987654321", type: .nurse, doctor: nil),
+            UserModel(id: "3", name: "Alice Smith", dob: "03/03/2000", email: "alice@example.com", phone: "1122334455", type: .admin, doctor: nil)
+        ]
+        viewModel.sortOption = .type
 
         let sorted = viewModel.sortedPatients
-        XCTAssertTrue(sorted.allSatisfy { $0.type != .patient }, "Sorted patients by type patient should not include non-patient users.")  
+        let expected = viewModel.patients.sorted { $0.type.rawValue < $1.type.rawValue }
+
+        XCTAssertEqual(sorted.map { $0.id }, expected.map { $0.id }, "Sorted patients by type should return patients sorted by type.")
     }
     
     func testFavoriteFilteredPatients() throws {
         viewModel.currentUserType = "patient"
         viewModel.patients = patients
-        viewModel.filter { $0. isFavorite } // check syntax for isFavorite
+        viewModel.favoritePatients = Set(patients.map { $0.id })
 
-        let favPatients = viewModel.filteredPatients
-        // check boolean statement syntax
-        XCTAssertTrue(favPatients.allSatisfy {$0 isFavorite == true}, "Filtered favorite patients test should return favorite patients only." )
+        let favPatients = viewModel.favoriteFilteredPatients
+        XCTAssertTrue(favPatients.allSatisfy { viewModel.favoritePatients.contains($0.id) }, "Filtered favorite patients test should return favorite patients only.")
     }
 }
 

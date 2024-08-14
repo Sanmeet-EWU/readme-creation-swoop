@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserModel: Identifiable, Codable {
+struct UserModel: Identifiable, Codable, Equatable {
     var id: String
     let name: String
     let dob: String
@@ -15,5 +15,15 @@ struct UserModel: Identifiable, Codable {
     let phone: String
     let type: UserTypeEnum
     let doctor: String?
+    
+    static func ==(lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.dob == rhs.dob &&
+        lhs.email == rhs.email &&
+        lhs.phone == rhs.phone &&
+        lhs.type == rhs.type &&
+        lhs.doctor == rhs.doctor
+    }
 }
 

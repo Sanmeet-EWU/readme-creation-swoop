@@ -40,7 +40,21 @@ final class CalendarViewModelTests: XCTestCase {
         XCTAssertEqual(filteredEvents.first?.title, "Event 1", "The event on the selected date should be included in the filtered list.")
     }
     
-    func testLimitTitleText() throws {}
-    
-    func testLimitDescriptionText() throws {}
+    func testLimitTitleText() throws {
+        let input = "Radiology Appointment"
+        let limit = -1
+        
+        let actual = viewModel.limitTitleText(input, limit: limit)
+        
+        XCTAssertNil(actual, "limitTitleText does not return nil given an out-of-bounds limit")
+    }
+
+    func testLimitDescriptionText() throws {
+        let input = "Take X-rays of the patient"
+        let limit = -1
+        
+        let actual = viewModel.limitDescriptionText(input, limit: limit)
+        
+        XCTAssertNil(actual, "limitDescriptionText does not return nil given an out-of-bounds limit")
+    }
 }

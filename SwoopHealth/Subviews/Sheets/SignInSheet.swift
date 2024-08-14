@@ -19,9 +19,10 @@ struct SignInSheet: View {
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 15)
+           Capsule()
                 .frame(width: 38, height: 4)
                 .foregroundStyle(Color(.systemGray5))
+                .padding(.top, 12)
             
             VStack(spacing: 10) {
                 TextField("email", text: $email)

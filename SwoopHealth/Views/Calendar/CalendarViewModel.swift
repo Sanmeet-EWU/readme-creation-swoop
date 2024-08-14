@@ -128,11 +128,19 @@ class CalendarViewModel: ObservableObject {
         }
     }
     
-    func limitTitleText(_ text: String, limit: Int) -> String {
+    func limitTitleText(_ text: String, limit: Int) -> String? {
+        guard limit > 0 else {
+            return nil
+        }
+        
         return String(text.prefix(limit))
     }
-    
-    func limitDescriptionText(_ text: String, limit: Int) -> String {
+
+    func limitDescriptionText(_ text: String, limit: Int) -> String? {
+        guard limit > 0 else {
+            return nil
+        }
+        
         return String(text.prefix(limit))
     }
 }

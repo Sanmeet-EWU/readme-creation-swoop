@@ -39,7 +39,7 @@ extension CreateEventSheet {
             Capsule()
                 .frame(width: 45, height: 5)
                 .foregroundStyle(Color(.systemGray4))
-                .padding(.top)
+                .padding(.top, 12)
             
             picker
             Spacer()
@@ -127,7 +127,7 @@ extension CreateEventSheet {
                         .frame(height: 46)
                 }
                 .onChange(of: viewModel.title) { (oldValue, newValue) in
-                    viewModel.title = viewModel.limitTitleText(newValue, limit: 50)
+                    viewModel.title = viewModel.limitTitleText(newValue, limit: 50) ?? ""
                 }
             
             TextEditor(text: $viewModel.description)
@@ -151,7 +151,7 @@ extension CreateEventSheet {
                     focusedField = .description
                 }
                 .onChange(of: viewModel.description) { (oldValue, newValue) in
-                    viewModel.description = viewModel.limitDescriptionText(newValue, limit: 200)
+                    viewModel.description = viewModel.limitDescriptionText(newValue, limit: 200) ?? ""
                 }
         }
         .padding(12)
